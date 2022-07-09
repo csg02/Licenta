@@ -33,6 +33,8 @@ function Modal() {
             timestamp: serverTimestamp()
         })
 
+        console.log("new document added with ID", docRef.id );
+
         const imageRef = ref(storage, `posts/${docRef.id}/image`);
 
         await uploadString(imageRef, selectedFile, "data_url").then(async snapshot => {
@@ -42,9 +44,9 @@ function Modal() {
             })
         })
 
-        setOpen(false)
-        setLoading(false)
-        setSelectedFile(null)
+        setOpen(false);
+        setLoading(false);
+        setSelectedFile(null);
     }
 
 
